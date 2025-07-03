@@ -1,25 +1,24 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const cors = require('cors');
-const mongoose = require('mongoose');
-const authRoute = require('./routes/auth');
-const userRoute = require('./routes/user');
-const parcelRoute = require('./routes/parcel');
+import express from 'express';
+import dotenv from 'dotenv';
+import cors from 'cors';
+import mongoose from 'mongoose';
+import authRoute from './routes/auth.js';
+import userRoute from './routes/user.js';
+import parcelRoute from './routes/parcel.js';
 
 dotenv.config();
 const app = express();
 
-//MIDDLEWARE
+// MIDDLEWARE
 app.use(cors());
 app.use(express.json());
 
-//ROUTES
+// ROUTES
 app.use('/auth', authRoute);
 app.use('/user', userRoute);
 app.use('/parcel', parcelRoute);
 
-
-//DATABASE CONNECTION
+// DATABASE CONNECTION
 const DB = process.env.DB;
 mongoose.connect(DB).then(() => {
   console.log('Database connected successfully');
@@ -27,7 +26,7 @@ mongoose.connect(DB).then(() => {
   console.log(err)
 });
 
-//SERVER
+// SERVER
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);
 });
