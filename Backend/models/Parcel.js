@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const ParcelSchema = new mongoose.Schema(
   {
@@ -50,8 +50,8 @@ const ParcelSchema = new mongoose.Schema(
     },
   },
   {
-    timestamp: true,
+    timestamps: true, // <-- fix typo: should be 'timestamps'
   }
 );
 
-module.exports = mongoose.model("Parcel", ParcelSchema);
+export default mongoose.model("Parcel", ParcelSchema);

@@ -1,4 +1,4 @@
-const Parcel = require("../models/Parcel");
+import Parcel from "../models/Parcel.js";
 
 // ADD PARCEL
 export const createParcel = async (req, res) => {
