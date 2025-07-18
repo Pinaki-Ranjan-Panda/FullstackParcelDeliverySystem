@@ -11,7 +11,7 @@ export const deleteUser = async (req, res) => {
 };
 
 // GET USER
-export const getUser = async (req, res) => {
+export const getAllUser = async (req, res) => {
   try {
     const users = await User.find().sort({ createdAt: -1 });
     res.status(200).json(users);

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ParcelSchema = new mongoose.Schema(
+const ParcelSchema = mongoose.Schema(
   {
     from: {
       type: String,
@@ -35,8 +35,8 @@ const ParcelSchema = new mongoose.Schema(
       required: true,
     },
     date: {
-      type: Date,
-      default: Date.now,
+      type: String,
+      required: true,
     },
     note: {
       type: String,

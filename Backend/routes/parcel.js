@@ -1,5 +1,5 @@
 import express from 'express';
-import { createParcel, getAllParcels, updateParcel, getParcel, getUserParcels, deleteParcel } from '../controlllers/parcel.js';
+import { createParcel, getAllParcels, updateParcel, getParcel, getUserParcels, deleteParcel } from '../controllers/parcel.js';
 
 const router = express.Router();
 
@@ -7,7 +7,7 @@ const router = express.Router();
 router.post("/", createParcel);
 
 // GET ALL PARCELS
-router.get("/", getAllParcels);
+router.get("/:id", getAllParcels);
 
 // UPDATE PARCEL
 router.put("/:id", updateParcel);
